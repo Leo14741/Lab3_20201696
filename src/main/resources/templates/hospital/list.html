@@ -26,6 +26,10 @@
         <td th:text="${hospital.nombreH}"></td>
         <td th:text="${hospital.direccionH}"></td>
         <td th:text="${hospital.telefonoH}"></td>
+        <td><a class="btn btn-primary" th:href="@{'/hospital/mostrarDoctores' + '?id=' + ${hospital.hospitalId}}">Editar</a>
+        </td>
+        <td><a class="btn btn-danger" th:href="@{'/hospital/mostrarPacientes' + '?id=' + ${hospital.hospitalId}}">Borrar</a>
+        </td>
       </tr>
     </table>
   </div>
