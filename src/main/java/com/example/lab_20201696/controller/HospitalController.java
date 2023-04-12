@@ -27,4 +27,16 @@ public class HospitalController {
         model.addAttribute("hospitalList", lista);
         return "hospital/list";
     }
+    @GetMapping(value = {"/list1", ""})
+    public String listarDoctores(Model model) {
+        List<Hospital> lista = hospitalRepository.findAll();
+        model.addAttribute("doctorList", lista);
+        return "redirect:/hospital/list";
+    }
+    @GetMapping(value = {"/list2", ""})
+    public String listarPacientes(Model model) {
+        List<Hospital> lista = hospitalRepository.findAll();
+        model.addAttribute("pacienteList", lista);
+        return "redirect:/hospital/list";
+    }
 }
